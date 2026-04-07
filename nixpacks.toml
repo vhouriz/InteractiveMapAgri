@@ -1,0 +1,13 @@
+[phases.setup]
+nixPkgs = ["php", "php82", "composer"]
+
+[phases.build]
+cmds = [
+  "composer install",
+  "cp .env.example .env || true",
+  "php artisan key:generate || true",
+  "php artisan config:cache"
+]
+
+[start]
+cmd = "php artisan serve --host=0.0.0.0 --port=$PORT"
