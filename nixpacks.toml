@@ -1,11 +1,9 @@
 [phases.setup]
-nixPkgs = ["php", "php82", "composer"]
+nixPkgs = ["php82", "php82Packages.composer"]
 
 [phases.build]
 cmds = [
   "composer install",
-  "cp .env.example .env || true",
-  "php artisan key:generate || true",
   "php artisan config:cache"
 ]
 
