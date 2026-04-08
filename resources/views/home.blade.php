@@ -224,7 +224,7 @@ function municipalityInteraction(feature, layer) {
 }
 
 // Rest of your existing script stays the same...
-fetch("{{ asset('Region_9_municipalities.geojson') }}")
+fetch("/Region_9_municipalities.geojson")
 .then(res => res.json())
 .then(data => {
     provinceLayer = L.geoJSON(data, {
