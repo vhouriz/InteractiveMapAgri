@@ -136,6 +136,7 @@ body{margin:0;padding-top:100px;background:#f0f2f5;font-family:Arial, sans-serif
 <!-- Your existing scripts stay EXACTLY the same -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
 const map = L.map('map',{
     minZoom:9,
     maxZoom:18,
@@ -530,6 +531,7 @@ function clearIrrigation(map) {
     document.getElementById('irrigation-legend')?.remove();
     map.removeLayer(irrigationLayer);
 }
+});
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
